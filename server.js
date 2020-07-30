@@ -13,10 +13,8 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'postgresql-acute-56093',
-      user : 'postgres',
-      password : 'bloodandguts',
-      database : 'smartbrain'
+      host : process.env.DATABASE_URL,
+      ssl: true,
     }
   });
 // db.select('*').from('users').then(data=>{         //remove when done
